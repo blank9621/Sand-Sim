@@ -108,12 +108,12 @@ void updateDots(array<array<pair<sf::RectangleShape, bool>, 60>, 60> &Dots)
     {
         for (int j = 0; j < Dots[0].size(); j++)
         {
-            if (Dots[i][j].second && !Dots[i + 1][j + 2].second && i + 1 < Dots.size() && j + 2 < Dots[0].size())
+            if (Dots[i][j].second && !Dots[i + 1][j + 1].second && i + 1 < Dots.size() && j + 1 < Dots[0].size())
             {
                 Dots[i][j].second = false;
                 Dots[i + 1][j + 1].second = true;
             }
-            if (Dots[i][j].second && !Dots[i -1][j + 2].second && i -1 < Dots.size() && j + 2 < Dots[0].size())
+            if (Dots[i][j].second && !Dots[i -1][j + 1].second && i -1 < Dots.size() && j + 1 < Dots[0].size())
             {
                 Dots[i][j].second = false;
                 Dots[i -1][j + 1].second = true;
