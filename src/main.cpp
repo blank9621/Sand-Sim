@@ -22,7 +22,7 @@ int main()
         {
             Dots[i][j].first.setPosition({i * Dot_size, j * Dot_size});
             Dots[i][j].second = false;
-            Dots[i][j].first.setSize({Dot_size -1 , Dot_size -1 });
+            Dots[i][j].first.setSize({Dot_size - 1, Dot_size - 1});
             Dots[i][j].first.setOutlineColor(sf::Color::Red);
             Dots[i][j].first.setOutlineThickness(1);
             Dots[i][j].first.setFillColor(sf::Color::White);
@@ -70,8 +70,8 @@ int main()
         window.clear();
         // update dots
         updateDots(Dots);
+        
         // render dots
-
         for (auto &&i : Dots)
         {
             for (auto &&D : i)
@@ -100,7 +100,24 @@ void updateDots(array<array<pair<sf::RectangleShape, bool>, 60>, 60> &Dots)
                 Dots[i][j].second = false;
                 Dots[i][j + 1].second = true;
             }
-            // Dots[i][j].first.setPosition({Dots[i][j].first.getPosition().x, Dots[i][j].first.getPosition().y + 1});
+
+        }
+    }
+
+    for (int i = 0; i < Dots.size(); i++) //check for if a sand can fall in side coloms
+    {
+        for (int j = 0; j < Dots[0].size(); j++)
+        {
+            if (Dots[i][j].second && !Dots[i + 1][j + 2].second && i + 1 < Dots.size() && j + 2 < Dots[0].size())
+            {
+                Dots[i][j].second = false;
+                Dots[i + 1][j + 1].second = true;
+            }
+            if (Dots[i][j].second && !Dots[i -1][j + 2].second && i -1 < Dots.size() && j + 2 < Dots[0].size())
+            {
+                Dots[i][j].second = false;
+                Dots[i -1][j + 1].second = true;
+            }
         }
     }
 }
