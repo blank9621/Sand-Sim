@@ -70,15 +70,8 @@ A simple yet captivating sand simulation built with SFML. This project allows us
 
 📸 **Screenshots**
 
-(Space reserved for screenshots of the application in action)
+<img width="628" height="666" alt="image" src="https://github.com/user-attachments/assets/b982fe93-627c-420a-8e2e-4700d85df91c" />
 
-🤝 **Contributing**
-
-Contributions are welcome! Feel free to submit pull requests with improvements, bug fixes, or new features.
-
-📝 **License**
-
-[Specify the License here, e.g., MIT License]
 
 📬 **Contact**
 
@@ -87,5 +80,3 @@ Contributions are welcome! Feel free to submit pull requests with improvements, 
 💖 **Thanks**
 
 Thank you for checking out the Sand Simulation project! We hope you find it interesting and useful.
-
-This is written by [readme.ai](https://readme-generator-phi.vercel.app/).
