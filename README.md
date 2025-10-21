@@ -50,7 +50,7 @@ A simple yet captivating sand simulation built with SFML. This project allows us
 1.  Run the executable:
 
     ```bash
-    ./sand
+    ./app
     ```
 
 💻 **Usage**
@@ -71,11 +71,6 @@ A simple yet captivating sand simulation built with SFML. This project allows us
 📸 **Screenshots**
 
 <img width="628" height="666" alt="image" src="https://github.com/user-attachments/assets/b982fe93-627c-420a-8e2e-4700d85df91c" />
-
-
-📬 **Contact**
-
-[Your Name/Organization] - [Your Email/Website]
 
 💖 **Thanks**
 
