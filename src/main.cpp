@@ -28,15 +28,6 @@ int main()
             Dots[i][j].first.setFillColor(sf::Color::White);
         }
     }
-    // Dots[0][1].second = true;
-    // for (float i = 0; i < Dots.size(); i++)
-    // {
-    //     for (float j = 0; j < Dots[0].size(); j++)
-    //     {
-    //         cout << Dots[i][j].second << ' ' ;
-    //     }
-    //     cout << endl;
-    // }
 
 
     window.setFramerateLimit(60);
