@@ -16,9 +16,9 @@ int main()
     // render window
     sf::RenderWindow window({Width, Hight}, "Sand_Simulator");
     array<array<pair<sf::RectangleShape, bool>, 60>, 60> Dots;
-    for (int i = 0; i < Dots.size(); i++)
+    for (float i = 0; i < Dots.size(); i++)
     {
-        for (int j = 0; j < Dots[0].size(); j++)
+        for (float j = 0; j < Dots[0].size(); j++)
         {
             Dots[i][j].first.setPosition({i * Dot_size, j * Dot_size});
             Dots[i][j].second = false;
@@ -28,6 +28,16 @@ int main()
             Dots[i][j].first.setFillColor(sf::Color::White);
         }
     }
+    // Dots[0][1].second = true;
+    // for (float i = 0; i < Dots.size(); i++)
+    // {
+    //     for (float j = 0; j < Dots[0].size(); j++)
+    //     {
+    //         cout << Dots[i][j].second << ' ' ;
+    //     }
+    //     cout << endl;
+    // }
+
 
     window.setFramerateLimit(60);
     int temp = 0;
@@ -93,31 +103,37 @@ void updateDots(array<array<pair<sf::RectangleShape, bool>, 60>, 60> &Dots)
 {
     for (int i = 0; i < Dots.size(); i++)
     {
-        for (int j = 0; j < Dots[0].size(); j++)
+        for (int j = Dots[0].size() -1  ; j >= 0 ; j--)
         {
+            
             if (Dots[i][j].second && !Dots[i][j + 1].second && Dots[i][j].first.getPosition().y + Dot_size < Hight)
             {
+                
                 Dots[i][j].second = false;
                 Dots[i][j + 1].second = true;
             }
+            
 
         }
     }
 
-    for (int i = 0; i < Dots.size(); i++) //check for if a sand can fall in side coloms
+    for (int i = Dots.size() -1  ; i >= 0 ; i--) //check for if a sand can fall in side coloms
     {
-        for (int j = 0; j < Dots[0].size(); j++)
+        for (int j = Dots[0].size() -1  ; j >= 0 ; j--)
         {
-            if (Dots[i][j].second && !Dots[i + 1][j + 1].second && i + 1 < Dots.size() && j + 1 < Dots[0].size())
+
+            if(Dots[i][j].second && (i + 1 < Dots.size() && j + 1 < Dots[0].size()) && !Dots[i+1][j+1].second && Dots[i][j + 1].second)
             {
                 Dots[i][j].second = false;
-                Dots[i + 1][j + 1].second = true;
+                Dots[i+1][j+1].second = true;
             }
-            if (Dots[i][j].second && !Dots[i -1][j + 1].second && i -1 < Dots.size() && j + 1 < Dots[0].size())
+
+            if(Dots[i][j].second && (i - 1 > 0 && j + 1 < Dots[0].size()) && !Dots[i-1][j+1].second && Dots[i][j + 1].second)
             {
                 Dots[i][j].second = false;
-                Dots[i -1][j + 1].second = true;
-            }
+                Dots[i-1][j+1].second = true;
+            }            
+
         }
     }
 }
